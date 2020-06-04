@@ -1,0 +1,11 @@
+*.aux
+*.log
+*.out
+*.toc
+*.synctex.gz
+*.gz
+*.bak
+*.pdf
+*.upa
+*.dvi
+/build/*

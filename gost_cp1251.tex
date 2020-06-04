@@ -1,0 +1,121 @@
+\documentclass[russian,cp1251,14pt,a4paper,emptystyle, pointsection, floatsection,equationsection, oneside]{eskdtext}
+% Объявляем документ класса eskdtext (подробнее можно узнать из описания пакета eskdx)
+% russian - текст на русском языке, utf8 - кодировка документа UTF-8
+% floatsection - нумерация таблиц и рисунков с учётом номера главы, equationsection - то же для формул
+%Большие таблицы
+\usepackage{longtable}
+\usepackage{graphicx} % Используем графику в документе
+ 
+\usepackage{mathtext} % Русские буквы в формулах
+\usepackage[T2A]{fontenc}
+\usepackage[cp1251]{inputenc}
+%Указание нумерации страниц
+%\usepackage[numberbottom, numbercenter]{eskdplain}
+\pagestyle{plain}
+% начать нумерацию с номера два
+%\setcounter{page}{2}
+ 
+%способ ручной установки полей
+\usepackage{geometry} 
+\geometry{top=2cm} %поле сверху
+\geometry{bottom=2cm} %поле снизу
+\geometry{left=3cm} %поле слева
+\geometry{right=2cm} %поле справа
+
+
+%Для центрирования заголовков таблиц:
+\captionsetup[longtable]{justification=centering}
+
+%Стилевой пакет делающий красивости
+\usepackage{textcomp}
+
+%расширенные наборы математических символов
+\usepackage{amssymb,amsmath,amsfonts,latexsym}
+
+%"умные" библиографические ссылки(сортировка и сжатие)
+\usepackage{cite}  
+
+%Подгрузка в файл PDF: \includepdf[fitpaper=true, pages=-]{YLM_Series.pdf}
+\usepackage{pdfpages}
+
+%Включение пакета подгрузки внешних изображений
+\usepackage{graphicx} 
+
+%Поддержка поиска русских слов в пдф
+\usepackage{cmap} 
+
+%Вставка кода \lstinputlisting[language=C++]{ex7.cpp}
+\usepackage{listings} 
+%Далее настройка под язык python модуля listings
+\lstset{
+  language=Python,                % Язык программирования 
+  numbers=left,                   % С какой стороны нумеровать
+  %numberstyle=tinycolor{gray},     % Стиль который будет использоваться для нумерации строк
+  stepnumber=1,                   % Шаг между линиями. Если 1, то будет пронумерована каждая строка 
+  %numbersep=5pt,                  
+  %backgroundcolor=color{white},      % Цвет подложки. Вы должны добавить пакет color - usepackage{color}
+  %showspaces=false,               
+  %showstringspaces=false,         
+  %showtabs=false,                
+  frame=single,                    % Добавить рамку
+  %rulecolor=color{black},        
+  tabsize=4,                       % Tab - 2 пробела
+  breaklines=true,                 % Автоматический перенос строк
+  breakatwhitespace=false,          % Переносить строки по словам
+  %title=lstname                   % Показать название подгружаемого файла
+}
+
+%Установка межстрочного интервала
+\linespread{1.5}
+%\renewcommand{\baselinestretch}{1.5} % Задаём единичный межстрочный интервал
+
+%Подключение отображения ссылок \href{http:..}{}
+\usepackage[colorlinks,urlcolor=blue,linkcolor=black]{hyperref} 
+
+%Для игнорирования преамбул подключаемых документов
+\usepackage{standalone}
+
+%Изменение ориентации отдельной страницы
+\usepackage{lscape}
+% в тексте
+%\begin{landscape}
+%...
+% часть текста, которая должна быть повёрнута (напечатана как на горизонтально-ориентированной странице)
+%...
+%\end{landscape}
+
+%Выравнивание в ячейках
+%\usepackage{makecell}
+
+%Объединение ячеек
+%\usepackage{multirow}
+
+%Для зачёркивания слов
+%\usepackage{ulem}
+
+% Минимальное число символов при переносе - 2
+\righthyphenmin=2 
+
+%Ставим шрифт times new roman
+\usepackage{pscyr}
+\renewcommand{\rmdefault}{ftm}
+
+%Пакет для коментов: \if 0 \fi
+\usepackage{comment} 
+
+%Указывает о борьбе с залезанием на поля
+\sloppy 
+
+\usepackage{textcomp}
+\newcommand*{\No}{\textnumero}
+
+\begin{document}
+
+	\part{}
+		\section{}
+			\subsection{}
+				\subsubsection{}
+					\paragraph{}
+						\subparagraph{}
+	
+\end{document}

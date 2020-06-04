@@ -1,0 +1,83 @@
+latex template collection:
+
+https://github.com/cmichi/latex-template-collection
+
+%%%%%%%%%%%%
+%%% Вложить другой файл
+
+\input{filename} imports the commands from filename.tex into the target file; it's equivalent to typing all the commands from filename.tex right into the current file where the \input line is.
+
+\include{filename} essentially does a \clearpage before and after \input{filename}, together with some magic to switch to another .aux file, and omits the inclusion at all if you have an \includeonly without the filename in the argument. This is primarily useful when you have a big project on a slow computer; changing one of the include targets won't force you to regenerate the outputs of all the rest.
+
+\include{filename} gets you the speed bonus, but it also can't be nested, can't appear in the preamble, and forces page breaks around the included text.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%% Book: 
+\part{}, \chapter{}, \section{}, \subsection{}, \subsubsection{}, \paragraph{}, \subparagraph{}.
+
+%% Report:
+\part{}, \chapter{}, \section{}, \subsection{}, \subsubsection{}, \paragraph{}, \subparagraph{}.
+
+%% Article:
+\part{}, \section{}, \subsection{}, \subsubsection{}, \paragraph{}, \subparagraph{}.
+
+%% Letter:
+A letter does not know the same structuring commands as other formats, but more specific commands like \signature{}, \address{}, \opening{} and \closing{}.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Примеры вставки кода
+
+\begin{python}								% Оформление python кода
+def f(x):
+	return x
+\end{python}
+
+\pyth{__init__}								% Прям в тексте указание ссылки или типа того 
+\inputpython{python_file.py}{23}{50} 		% Для вывода контента из питоновсокго файла со строки 23 до 50
+
+%Еще пример с модулем lstlisting
+\begin{lstlisting}
+ARG UID=1000
+\end{lstlisting}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Примеры вставки комментариев pdf - все прям в тексте
+
+Here we\pdfcomment[color=red,icon=Insert]{insert: miss} a word!
+You can do much more \pdfmarkupcomment[markup=Squiggly,color=green]{with pdfcomment}{move to the front}.
+This is a \pdfmarkupcomment[markup=StrikeOut,color=red]{stupid}{replace stupid with funny}  game!
+\pdfmarkupcomment[markup=Highlight,color=yellow]{Of course, you can highlight complete sentences.}{Highlight}
+This is very\pdfcomment[icon=Note,color=blue]{insert graphic!} interesting!
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Вставка изображения в тексте "Рис. \ref{fig1}"
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=0.6\textwidth]{cxema1} % cxema1 - имя изображения без расширения
+	\caption{Общая схема управления в узком смысле}
+	\label{fig1}
+\end{figure}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Списоки, нумерованный и не нумерованный
+\begin{itemize}
+	\item
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Разное
+\url{http://...}							% Вставка ссылки
+\include{filename2}							% Вставка другого файла
+\input{econom}								% Аналогично, вставлял так tex
+\today										% Отображение текщей даты
+\cite{NAME_TAG_BIBLIOGRAPHY}				% Имя тега у одного из списков литературы
+\label{NAME_TAG}							% Создание якоря
+\pageref{NAME_TAG}							% Создание ссылки на якорь
+\setcounter{page}{2}						% Нумерация страницы с номера 2
+\tableofcontents							% Вставка содержания
+\clearpage									% Следующий текст с новой строки
+\pagestyle{fancy}							% Установка стиля нумерации
+\pagestyle{plain}							% Установка стиля нумерации,стандартный стиль
+\addcontentsline{toc}{section}{ЗАКЛЮЧЕНИЕ}	% Добавление главы без номера
